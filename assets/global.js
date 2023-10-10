@@ -952,6 +952,16 @@ class SlideshowComponent extends SliderComponent {
 
 customElements.define('slideshow-component', SlideshowComponent);
 
+function handlelize(str) {
+  str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+    .replace(/([^\w]+|\s+)/g, '-') // Replace space and other characters by hyphen
+    .replace(/\-\-+/g, '-')	// Replaces multiple hyphens by one hyphen
+    .replace(/(^-+|-+$)/g, '') // Remove extra hyphens from beginning or end of the string
+    .toLowerCase(); // To lowercase
+
+  return str
+};
+
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
@@ -966,6 +976,8 @@ class VariantSelects extends HTMLElement {
     this.removeErrorMessage();
     this.updateVariantStatuses();
 
+    this.filterImgVariant();
+
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -976,6 +988,21 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
     }
+  }
+
+
+
+  filterImgVariant() {
+    const currentVariantId = handlelize(this.currentVariant.featured_media.alt)
+    console.log(currentVariantId)
+    const elements = document.querySelectorAll(`.thumbnail-list__item`);
+    elements.forEach((element) => {
+      if (element.classList.contains(currentVariantId)) {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
+    });
   }
 
   updateOptions() {
