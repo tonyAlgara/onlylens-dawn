@@ -1,0 +1,19 @@
+
+
+  
+  {% assign defaultCollection = false %}
+  {% for col in collections %}
+    {% if product.title contains col.title %}
+        {% assign defaultCollection = col %}
+    {% endif %}
+  {% endfor %}
+  <nav class="sp-breadcrumb">
+    <a href="{{ routes.root_url }}" class="dib">{{ 'general.breadcrumbs.home' | t }}</a>
+      {% if defaultCollection %}
+        <i class="facl facl-angle-right"></i><a href="{{defaultCollection.url}}" class="dib">{{defaultCollection.title}}</a>
+        {% elsif collection.url != blank %}
+        <i class="facl facl-angle-right"></i><a href="{{collection.url}}" class="dib">{{collection.title}}</a>
+      {% endif %}
+    <i class="facl facl-angle-right"></i>
+    {{product.title}}
+  </nav>
