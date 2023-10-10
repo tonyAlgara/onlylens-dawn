@@ -28,7 +28,7 @@
   background-color: white;
   max-width: 100%;
 }
-.selected {
+.color_option_selected {
   border: 2px solid black !important;
 }
 
@@ -37,5 +37,5 @@
   border: 0px !important;
 }
 .thumbnail img {
-  object-fit: contain;
+  object-fit: contain !important;
 }

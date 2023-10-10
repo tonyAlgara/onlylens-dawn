@@ -61,8 +61,8 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color_option {{value | handleize}}  {% if option.selected_value == value %}selected{% endif %}">
-      {{ currentVariant.featured_image | product_img_url: '80x80' | img_tag }}
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color_option color_option_{{value | handleize}}  {% if option.selected_value == value %}color_option_selected{% endif %}">
+      {{ currentVariant.featured_image | product_img_url: '80x80' | img_tag | alt: currentVariant.title }}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t  }}</span>
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}

@@ -995,6 +995,7 @@ class VariantSelects extends HTMLElement {
   filterImgVariant() {
     console.log(this.currentVariant)
     const currentVariantId = handlelize(this.currentVariant.option1)
+
     const currentThumbId = 'color_' + currentVariantId
     const thumbnails = document.querySelectorAll(`.thumbnail-list__item`);
     thumbnails.forEach((thumb) => {
@@ -1005,12 +1006,13 @@ class VariantSelects extends HTMLElement {
       }
     });
 
+    const currentOptionColor = 'color_option_' + currentVariantId
     const options = document.querySelectorAll(`.color_option`);
     options.forEach((option) => {
-      if (option.classList.contains(currentVariantId)) {
-        option.classList.add('selected');
+      if (option.classList.contains(currentOptionColor)) {
+        option.classList.add('color_option_selected');
       } else {
-        option.classList.remove('selected');
+        option.classList.remove('color_option_selected');
       }
     }
     );
