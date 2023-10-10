@@ -69,6 +69,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -81,11 +82,11 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "TRENDING SUNGLASSES",
         "heading_size": "h1",
-        "description": "",
+        "description": "<p><em>The best sunglasses from exceptional designers selected by OnlyLens ready to order now<\/em><\/p>",
         "show_description": false,
-        "description_style": "body",
+        "description_style": "subtitle",
         "collection": "home",
         "products_to_show": 16,
         "columns_desktop": 4,
@@ -94,7 +95,7 @@
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "background-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
