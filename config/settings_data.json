@@ -375,7 +375,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".media--transparent {background-color: white}"
+
     ]
   }
 }
