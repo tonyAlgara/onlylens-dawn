@@ -21,9 +21,11 @@
   assign variants_option3_arr = product.variants | map: 'option3'
 
   assign product_form_id = 'product-form-' | append: section.id
+
 -%}
 
 {%- for value in option.values -%}
+  {% assign currentVariant = product.variants | where: "option1", value | first %}
   {%- liquid
     assign option_disabled = true
 
@@ -59,9 +61,9 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ value -}}
-      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color_option {{value | handleize}}  {% if option.selected_value == value %}selected{% endif %}">
+      {{ currentVariant.featured_image | product_img_url: '80x80' | img_tag }}
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t  }}</span>
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option

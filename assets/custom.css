@@ -8,3 +8,34 @@
 .media--transparent {
   background-color: white;
 }
+
+/*variant selector*/
+.product-form__input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-form__input label {
+  width: 80px;
+  height: 80px;
+  border-radius: 0px !important;
+  display: flex !important;
+  align-items: center;
+  padding: 4px !important;
+  background-color: white !important;
+}
+.product-form__input label img {
+  background-color: white;
+  max-width: 100%;
+}
+.selected {
+  border: 2px solid black !important;
+}
+
+/*product*/
+.product-media-container {
+  border: 0px !important;
+}
+.thumbnail img {
+  object-fit: contain;
+}

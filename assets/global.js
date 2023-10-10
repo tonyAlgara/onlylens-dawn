@@ -993,16 +993,27 @@ class VariantSelects extends HTMLElement {
 
 
   filterImgVariant() {
-    const currentVariantId = handlelize(this.currentVariant.featured_media.alt)
-    console.log(currentVariantId)
-    const elements = document.querySelectorAll(`.thumbnail-list__item`);
-    elements.forEach((element) => {
-      if (element.classList.contains(currentVariantId)) {
-        element.style.display = 'block';
+    console.log(this.currentVariant)
+    const currentVariantId = handlelize(this.currentVariant.option1)
+    const currentThumbId = 'color_' + currentVariantId
+    const thumbnails = document.querySelectorAll(`.thumbnail-list__item`);
+    thumbnails.forEach((thumb) => {
+      if (thumb.classList.contains(currentThumbId)) {
+        thumb.style.display = 'block';
       } else {
-        element.style.display = 'none';
+        thumb.style.display = 'none';
       }
     });
+
+    const options = document.querySelectorAll(`.color_option`);
+    options.forEach((option) => {
+      if (option.classList.contains(currentVariantId)) {
+        option.classList.add('selected');
+      } else {
+        option.classList.remove('selected');
+      }
+    }
+    );
   }
 
   updateOptions() {
