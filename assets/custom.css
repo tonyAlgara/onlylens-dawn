@@ -1,4 +1,10 @@
 /*Collection List*/
 .card__media .media img {
-  object-fit: contain;
+  object-fit: contain !important;
+}
+.product-card-wrapper .card__inner {
+  height: 160px;
+}
+.media--transparent {
+  background-color: white;
 }
