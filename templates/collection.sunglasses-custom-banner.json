@@ -31,6 +31,9 @@
         "template--19892309197138__9fba4b8d-0858-4a56-b5bc-a3295cb25c3e-heading-1",
         "template--19892309197138__9fba4b8d-0858-4a56-b5bc-a3295cb25c3e-text-1"
       ],
+      "custom_css": [
+        "@media screen and (min-width: 990px) {#ImageWithText--template--19892309197138__9fba4b8d-0858-4a56-b5bc-a3295cb25c3e {padding: 2rem 4rem; }}"
+      ],
       "settings": {
         "image": "{{ collection.metafields.custom.custom_collection_image.value }}",
         "height": "small",
