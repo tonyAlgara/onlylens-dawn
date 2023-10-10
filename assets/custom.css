@@ -1,0 +1,4 @@
+/*Collection List*/
+.card__media .media img {
+  object-fit: contain;
+}
