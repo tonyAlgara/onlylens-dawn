@@ -96,6 +96,7 @@
                   </h2>
                 </a>
                 {% render 'breadcrumbs' %}
+                <h2>{%  if product.title contains 'Optical' %}Eyeglasses{% else %}Sunglasses{% endif %}</h2>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
