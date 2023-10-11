@@ -21,7 +21,6 @@
   assign variants_option3_arr = product.variants | map: 'option3'
 
   assign product_form_id = 'product-form-' | append: section.id
-
 -%}
 
 {%- for value in option.values -%}
@@ -61,10 +60,17 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color_option color_option_{{value | handleize}}  {% if option.selected_value == value %}color_option_selected{% endif %}">
-      {{ currentVariant.featured_image | product_img_url: '80x80' | img_tag | alt: currentVariant.title }}
-      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t  }}</span>
-    </label>
+    {% if option.name == "Color"  %}
+      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color_option color_option_{{value | handleize}}  {% if option.selected_value == value %}color_option_selected{% endif %}">
+        {{ currentVariant.featured_image | product_img_url: '80x80' | img_tag | alt: currentVariant.title }}
+        <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t  }}</span>
+      </label>
+    {% else %}
+      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+        {{ value -}}
+        <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      </label>
+    {% endif %}
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
