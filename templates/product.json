@@ -22,6 +22,12 @@
             "text_style": "subtitle"
           }
         },
+        "324f49e4-422c-4b0d-8318-c51f69aa90f8": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -51,24 +57,25 @@
         "vendor",
         "title",
         "caption",
+        "324f49e4-422c-4b0d-8318-c51f69aa90f8",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "hover",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "multicolumn": {
