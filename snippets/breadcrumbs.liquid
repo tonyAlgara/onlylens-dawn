@@ -8,7 +8,7 @@
     {% endif %}
   {% endfor %}
   <nav class="sp-breadcrumb">
-    <a href="{{ routes.root_url }}" class="dib">{{ 'general.breadcrumbs.home' | t }}</a>
+    <a href="{{ routes.root_url }}" class="dib">{{ 'onlylens.breadcrumbs.home' | t }}</a>
       {% if defaultCollection %}
         <i class="facl facl-angle-right"></i><a href="{{defaultCollection.url}}" class="dib">{{defaultCollection.title}}</a>
         {% elsif collection.url != blank %}

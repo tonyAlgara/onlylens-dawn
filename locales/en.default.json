@@ -508,5 +508,26 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "onlylens": {
+    "availability": {
+      "available": "Available: 10-12 days delivery",
+      "restock": "Restock: Ask for delivery time",
+      "notAvailable": "Not Available",
+      "coming_soon": "Coming Soon",
+      "express": "Express: 24-48h delivery",
+      "selectMethod": "or use one of the express methods"
+    },
+    "common": {
+      "size": "Size",
+      "color": "Color",
+      "lensType": "Lens Type",
+      "filter": "Filter Protection"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "search": "Search",
+      "product": "Product"
+    }
   }
 }
