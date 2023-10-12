@@ -39,3 +39,6 @@
 .thumbnail img {
   object-fit: contain !important;
 }
+.product__tax {
+  display: none;
+}
