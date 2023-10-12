@@ -24,7 +24,7 @@
 -%}
 
 {%- for value in option.values -%}
-  {% assign currentVariant = product.variants | where: "option1", value | first %}
+  {% assign currentVariant = product.variants | where: 'option1', value | first %}
   {%- liquid
     assign option_disabled = true
 
@@ -60,16 +60,23 @@
         class="disabled"
       {% endif %}
     >
-    {% if option.name == "Color"  %}
-      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color_option color_option_{{value | handleize}}  {% if option.selected_value == value %}color_option_selected{% endif %}">
+    {% if option.name == 'Color' %}
+      <label
+        for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+        class="color_option color_option_{{value | handleize}}  {% if option.selected_value == value %}color_option_selected{% endif %}"
+      >
         {{ currentVariant.featured_image | product_img_url: '80x80' | img_tag | alt: currentVariant.title }}
-        <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t  }}</span>
-      </label>
-    {% else %}
-      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-        {{ value -}}
         <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
       </label>
+    {% else %}
+      {% if option.values.size == 1 %}
+        {{ option.name }}: {{ value }}
+      {% else %}
+        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+          {{ value -}}
+          º <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+        </label>
+      {% endif %}
     {% endif %}
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
