@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.product-form__input label {
+.color_option {
   width: 80px;
   height: 80px;
   border-radius: 0px !important;
@@ -24,7 +24,7 @@
   padding: 4px !important;
   background-color: white !important;
 }
-.product-form__input label img {
+.color_option img {
   background-color: white;
   max-width: 100%;
 }
