@@ -122,7 +122,7 @@
                   else
                     assign has_visual_display = false
                     assign visual_layout_class = 'facets-layout-list'
-                    assign show_more_number = 10
+                    assign show_more_number = 15
                 endcase
               %}
 
@@ -256,7 +256,12 @@
                                       stroke-linejoin="round" />
                                   </svg>
                                 {% endif %}
-
+                                {%- if filter.label contains 'Color' -%}
+                                  <div
+                                    class="facet-checkbox__color"
+                                    style="background-color: {{ value.value }};"
+                                  ></div>
+                                {%- endif -%}
                                 <span class="facet-checkbox__text" aria-hidden="true">
                                   {{- value.label | escape }} ({{ value.count }})</span
                                 >

@@ -71,3 +71,16 @@ legend.form__label {
   text-decoration: none;
   color: #000
 }
+
+
+/*collection*/
+
+.facet-checkbox__color {
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-block !important;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
