@@ -88,14 +88,14 @@
               </p>
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
+                {% render 'breadcrumbs' %}
                 <h1>{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
                   <h2 class="h1">
                     {{ product.title | escape }}
                   </h2>
                 </a>
-                {% render 'breadcrumbs' %}
-                <h2>{%  if product.title contains 'Optical' %}Eyeglasses{% else %}Sunglasses{% endif %}</h2>
+                <h2>{% if product.title contains 'Optical' %}Eyeglasses{% else %}Sunglasses{% endif %}</h2>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
