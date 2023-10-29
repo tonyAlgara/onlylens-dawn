@@ -84,3 +84,41 @@ legend.form__label {
   border: 1px solid #ccc;
   margin-right: 0.5rem;
 }
+
+
+/*title*/
+
+h1.title--primary,
+h2.blog__title,
+h2.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+h1.title--primary:before,
+h1.title--primary:after,
+h2.blog__title:before,
+h2.blog__title:after,
+h2.title:before,
+h2.title:after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background: #222;
+  margin: 0 1rem;
+}
+
+.title-wrapper-with-link{
+  display: flex;
+    justify-content: center;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
