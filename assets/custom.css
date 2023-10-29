@@ -55,6 +55,7 @@ legend.form__label {
 /*breadcrumbs*/
 
 .sp-breadcrumb {
+  display: flex;
   padding: 0;
   font-size: 13px
 }

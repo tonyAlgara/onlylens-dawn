@@ -10,9 +10,9 @@
     {% render 'icon-angle-right' -%}
     <a href="{{defaultCollection.url}}" class="dib">{{ defaultCollection.title }}</a>
   {% elsif collection.url != blank %}
-    {% render 'con-angle-right' -%}
+    {% render 'icon-angle-right' -%}
     <a href="{{collection.url}}" class="dib">{{ collection.title }}</a>
   {% endif %}
-  <i class="facl facl-angle-right"></i>
+  {% render 'icon-angle-right' -%}
   {{ product.title }}
 </nav>
