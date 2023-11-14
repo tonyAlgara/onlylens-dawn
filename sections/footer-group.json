@@ -5,6 +5,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "ab4962df-0c69-4b0d-9b40-d667c7d8991e": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "footer-0": {
           "type": "link_list",
           "settings": {
@@ -21,23 +27,18 @@
         },
         "footer-2": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "heading": "Our mission",
             "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
           }
-        },
-        "ab4962df-0c69-4b0d-9b40-d667c7d8991e": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
-          }
         }
       },
       "block_order": [
+        "ab4962df-0c69-4b0d-9b40-d667c7d8991e",
         "footer-0",
         "footer-1",
-        "footer-2",
-        "ab4962df-0c69-4b0d-9b40-d667c7d8991e"
+        "footer-2"
       ],
       "settings": {
         "color_scheme": "background-2",
