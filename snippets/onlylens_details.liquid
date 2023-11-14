@@ -1,0 +1,27 @@
+<div class="details-container">
+  {%- for variant in product.variants -%}
+    <div
+      id="variant-{{ variant.id }}"
+      style="display:{% if product.variants.size == 1 %}block{% else %}none{% endif %}"
+      class="variant-other"
+    >
+      <div style="display: flex; flex-direction: column;">
+        {%- if variant.metafields.custom.variant_data.value.sizeText.size > 0 -%}
+          <span class="onlylens-details"
+            >Size: <strong>{{ variant.metafields.custom.variant_data.value.sizeText }}</strong></span
+          >
+        {%- endif -%}
+        {%- if variant.metafields.custom.variant_data.value.lensTypeText.size > 0 -%}
+          <span class="onlylens-details"
+            >Lens Type: <strong>{{ variant.metafields.custom.variant_data.value.lensTypeText }}</strong></span
+          >
+        {%- endif -%}
+        {%- if variant.metafields.custom.variant_data.value.filterProtectionText.size > 0 -%}
+          <span class="onlylens-details"
+            >Filter Type: <strong>{{ variant.metafields.custom.variant_data.value.filterProtectionText }}</strong></span
+          >
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endfor -%}
+</div>

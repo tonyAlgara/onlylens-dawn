@@ -22,7 +22,7 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-{% if option.name == 'Color' %}{{ option.selected_value }}{% endif %}
+{%- render 'onlylens_details' -%}
 
 {%- for value in option.values -%}
   {% assign currentVariant = product.variants | where: 'option1', value | first %}

@@ -1,0 +1,31 @@
+<div class="availability-container">
+  {%- for variant in product.variants -%}
+    {%- if product.variants.size == 1 -%}
+      {%- assign style = 'block' -%}
+    {%- elsif product.selected_or_first_available_variant.id == variant.id -%}
+      {%- assign style = 'block' -%}
+    {%- else -%}
+      {%- assign style = 'none' -%}
+    {%- endif -%}
+
+    {%- assign color = '#000' -%}
+
+    <div id="variant-{{ variant.id }}" style="display:{{style}}" class="variant-other">
+      {%- if variant.inventory_quantity > 0 -%}
+        {%- assign txt = 'onlylens.availability.express' | t -%}
+      {%- elsif variant.metafields.custom.coming_soon == true -%}
+        {%- assign txt = 'onlylens.availability.coming_soon' | t -%}
+        {%- assign color = '#ff1800' -%}
+      {%- elsif variant.metafields.my_fields.restock == true and variant.inventory_policy == 'continue' -%}
+        {%- assign txt = 'onlylens.availability.restock' | t -%}
+        {%- assign color = '#FFA500' -%}
+      {%- elsif variant.inventory_policy == 'continue' -%}
+        {%- assign txt = 'onlylens.availability.available' | t -%}
+      {%- else -%}
+        {%- assign txt = 'onlylens.availability.notAvailable' | t -%}
+      {%- endif -%}
+      <span class="onlylens-availability" style="color: {{color}};">{{ txt }}</span>
+      {%- if variant.sku -%}</span>{%- endif -%}
+    </div>
+  {%- endfor -%}
+</div>

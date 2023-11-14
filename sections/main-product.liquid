@@ -550,6 +550,13 @@
     {%- endif -%}
   </div>
 
+
+  {% comment %} Onlylens custom {% endcomment %}
+  {%- render 'onlylens_details' -%}
+  {%- if product.metafields.my_fields.short_description != blank -%}
+        <p>{{ product.metafields.my_fields.short_description }}</p>
+  {%- endif -%}
+
   <div class="product__description">
     {{ product.description }}
   </div>

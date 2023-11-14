@@ -976,7 +976,9 @@ class VariantSelects extends HTMLElement {
     this.removeErrorMessage();
     this.updateVariantStatuses();
 
+    // Onlylens code
     this.filterImgVariant();
+    this.showVariantInfo();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -1017,6 +1019,22 @@ class VariantSelects extends HTMLElement {
     }
     );
   }
+
+  showVariantInfo() {
+    Array.from(document.querySelectorAll('.variant-other')).forEach(function (element) {
+      element.style.display = 'none';
+    });
+    Array.from(document.querySelectorAll('#variant-' + this.currentVariant.id)).forEach(function (element) {
+      element.style.display = 'block';
+    })
+    Array.from(document.querySelectorAll('.variant-other-table')).forEach(function (element) {
+      element.style.display = 'none';
+    });
+    Array.from(document.querySelectorAll('#variant-table-' + this.currentVariant.id)).forEach(function (element) {
+      element.style.display = 'table-row';
+    })
+  }
+
 
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);

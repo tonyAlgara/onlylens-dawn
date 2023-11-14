@@ -1,0 +1,126 @@
+<table class="pr_attrs">
+  <tbody>
+    {%- for product_option in product.options_with_values -%}
+      <tr class="attr_pa_{{product_option.name | handle }}">
+        <th class="attr__label">{{ product_option.name }}</th>
+        <td class="attr__value">
+          <ul>
+            {% for value in product_option.values %}
+              <li>{{ value }}</li>
+              {% unless forloop.last == true %}{% endunless -%}
+            {%- endfor %}
+          </ul>
+        </td>
+      </tr>
+    {%- endfor -%}
+    {%- for variant in product.variants -%}
+      {% assign display = 'none' %}
+      {% if product.variants.size == 1 %}
+        {% assign display = 'table-row' %}
+      {% endif %}
+      {%- if variant.metafields.custom.variant_data.value.details.gender -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Gender</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.gender }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.front -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label-title" colspan="2">Colors</th>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.front -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Front</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.front }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.temple -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Temple</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.temple }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.lens -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Lens</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.lens }}</td>
+        </tr>
+      {%- endif -%}
+
+      {%- if variant.metafields.custom.variant_data.value.details.front_main -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label-title" colspan="2">Materials</th>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.front_main -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Front Main</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.front_main }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.temple_main -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Temple Main</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.temple_main }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.front_secondary -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Front Secondary</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.front_secondary }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.temple_secondary -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Temple Secondary</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.temple_secondary }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.lens_material -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Lens</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.lens_material }}</td>
+        </tr>
+      {%- endif -%}
+
+      {%- if variant.metafields.custom.variant_data.value.details.treatment
+        or variant.metafields.custom.variant_data.value.details.base
+      -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:none">
+          <th class="attr__label-title" colspan="2">Materials</th>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.sizeText -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Size</th>
+          <td>{{ variant.metafields.custom.variant_data.value.sizeText }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.base -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Base</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.base }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.height -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Height</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.height }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.diagonal -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Diagonal</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.diagonal }}</td>
+        </tr>
+      {%- endif -%}
+      {%- if variant.metafields.custom.variant_data.value.details.treatment -%}
+        <tr class="variant-other-table" id="variant-table-{{variant.id}}" style="display:{{display}}">
+          <th class="attr__label">Treatment</th>
+          <td>{{ variant.metafields.custom.variant_data.value.details.treatment }}</td>
+        </tr>
+      {%- endif -%}
+    {%- endfor -%}
+  </tbody>
+</table>
